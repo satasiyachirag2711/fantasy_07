@@ -34,10 +34,7 @@ class _AddCashScreenState extends State<AddCashScreen> {
                 children: [
                   Text(
                     "Add Cash",
-                    style: GoogleFonts.actor(
-                        letterSpacing: 2,
-                        fontSize: Get.width * 0.065,
-                        fontWeight: FontWeight.bold),
+                    style: GoogleFonts.actor(letterSpacing: 2, fontSize: Get.width * 0.065, fontWeight: FontWeight.bold),
                   ),
                   Card(
                     elevation: 4,
@@ -51,15 +48,11 @@ class _AddCashScreenState extends State<AddCashScreen> {
                             children: [
                               Text(
                                 'Deposited',
-                                style: GoogleFonts.actor(
-                                    fontSize: Get.width * 0.04,
-                                    fontWeight: FontWeight.bold),
+                                style: GoogleFonts.actor(fontSize: Get.width * 0.04, fontWeight: FontWeight.bold),
                               ),
                               Text(
                                 '\u{20B9}${userDetails["deposit"]}',
-                                style: TextStyle(
-                                    fontSize: Get.width * 0.05,
-                                    fontWeight: FontWeight.bold),
+                                style: TextStyle(fontSize: Get.width * 0.05, fontWeight: FontWeight.bold),
                               ),
                             ],
                           ),
@@ -70,15 +63,11 @@ class _AddCashScreenState extends State<AddCashScreen> {
                             children: [
                               Text(
                                 'Winnings',
-                                style: GoogleFonts.actor(
-                                    fontSize: Get.width * 0.04,
-                                    fontWeight: FontWeight.bold),
+                                style: GoogleFonts.actor(fontSize: Get.width * 0.04, fontWeight: FontWeight.bold),
                               ),
                               Text(
                                 '\u{20B9}${userDetails["winning"]}',
-                                style: TextStyle(
-                                    fontSize: Get.width * 0.05,
-                                    fontWeight: FontWeight.bold),
+                                style: TextStyle(fontSize: Get.width * 0.05, fontWeight: FontWeight.bold),
                               ),
                             ],
                           ),
@@ -89,15 +78,11 @@ class _AddCashScreenState extends State<AddCashScreen> {
                             children: [
                               Text(
                                 'Cash Bonus',
-                                style: GoogleFonts.actor(
-                                    fontSize: Get.width * 0.04,
-                                    fontWeight: FontWeight.bold),
+                                style: GoogleFonts.actor(fontSize: Get.width * 0.04, fontWeight: FontWeight.bold),
                               ),
                               Text(
                                 '\u{20B9}${userDetails["bonus"]}',
-                                style: TextStyle(
-                                    fontSize: Get.width * 0.05,
-                                    fontWeight: FontWeight.bold),
+                                style: TextStyle(fontSize: Get.width * 0.05, fontWeight: FontWeight.bold),
                               ),
                             ],
                           ),
@@ -107,11 +92,7 @@ class _AddCashScreenState extends State<AddCashScreen> {
                   ),
                   Text(
                     "Enter Amount",
-                    style: GoogleFonts.actor(
-                        height: 3,
-                        letterSpacing: 2,
-                        fontSize: Get.width * 0.05,
-                        fontWeight: FontWeight.bold),
+                    style: GoogleFonts.actor(height: 3, letterSpacing: 2, fontSize: Get.width * 0.05, fontWeight: FontWeight.bold),
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -125,22 +106,10 @@ class _AddCashScreenState extends State<AddCashScreen> {
                             filled: true,
                             prefixIcon: const Icon(Icons.currency_rupee),
                             counter: const SizedBox(height: 0),
-                            border: OutlineInputBorder(
-                                borderSide:
-                                    const BorderSide(color: Colors.grey),
-                                borderRadius: BorderRadius.circular(10)),
-                            focusedBorder: OutlineInputBorder(
-                                borderSide:
-                                    const BorderSide(color: Colors.grey),
-                                borderRadius: BorderRadius.circular(10)),
-                            enabledBorder: OutlineInputBorder(
-                                borderSide:
-                                    const BorderSide(color: Colors.grey),
-                                borderRadius: BorderRadius.circular(10)),
-                            disabledBorder: OutlineInputBorder(
-                                borderSide:
-                                    const BorderSide(color: Colors.grey),
-                                borderRadius: BorderRadius.circular(10)),
+                            border: OutlineInputBorder(borderSide: const BorderSide(color: Colors.grey), borderRadius: BorderRadius.circular(10)),
+                            focusedBorder: OutlineInputBorder(borderSide: const BorderSide(color: Colors.grey), borderRadius: BorderRadius.circular(10)),
+                            enabledBorder: OutlineInputBorder(borderSide: const BorderSide(color: Colors.grey), borderRadius: BorderRadius.circular(10)),
+                            disabledBorder: OutlineInputBorder(borderSide: const BorderSide(color: Colors.grey), borderRadius: BorderRadius.circular(10)),
                           ),
                           validator: (value) {
                             double amount = double.parse(value!);
@@ -153,11 +122,7 @@ class _AddCashScreenState extends State<AddCashScreen> {
                   ),
                   Text(
                     "Amount to Add",
-                    style: GoogleFonts.actor(
-                        height: 3,
-                        letterSpacing: 2,
-                        fontSize: Get.width * 0.045,
-                        fontWeight: FontWeight.bold),
+                    style: GoogleFonts.actor(height: 3, letterSpacing: 2, fontSize: Get.width * 0.045, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(
                     height: Get.height * 0.07,
@@ -184,13 +149,11 @@ class _AddCashScreenState extends State<AddCashScreen> {
                           });
                         },
                         child: Card(
-                          color: wallet.selectContainer.value == index
-                              ? const Color.fromARGB(255, 10, 37, 59)
-                              : Colors.white,
+                          color: wallet.selectContainer.value == index ? const Color.fromARGB(255, 10, 37, 59) : Colors.white,
                           elevation: 4,
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(5)),
-                          child: Center(
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
+                          child: Padding(
+                            padding: const EdgeInsets.all(10),
                             child: Text(
                               index == 0
                                   ? "\u{20B9}100"
@@ -201,10 +164,7 @@ class _AddCashScreenState extends State<AddCashScreen> {
                                           : index == 3
                                               ? "\u{20B9}500"
                                               : "\u{20B9}1000",
-                              style: TextStyle(
-                                  color: wallet.selectContainer.value == index
-                                      ? Colors.white
-                                      : Colors.black),
+                              style: TextStyle(color: wallet.selectContainer.value == index ? Colors.white : Colors.black),
                             ),
                           ),
                         ),
@@ -220,17 +180,8 @@ class _AddCashScreenState extends State<AddCashScreen> {
                           });
                         }
                       },
-                      style: ButtonStyle(
-                          minimumSize: MaterialStatePropertyAll(
-                              Size(Get.width, Get.height * 0.06)),
-                          backgroundColor:
-                              MaterialStatePropertyAll(Colors.green.shade900),
-                          elevation: const MaterialStatePropertyAll(4),
-                          shape: MaterialStatePropertyAll(
-                              RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(5)))),
-                      child: const Text("Submit",
-                          style: TextStyle(color: Colors.white))),
+                      style: ButtonStyle(minimumSize: MaterialStatePropertyAll(Size(Get.width, Get.height * 0.06)), backgroundColor: MaterialStatePropertyAll(Colors.green.shade900), elevation: const MaterialStatePropertyAll(4), shape: MaterialStatePropertyAll(RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)))),
+                      child: const Text("Submit", style: TextStyle(color: Colors.white))),
                 ],
               ),
             ),

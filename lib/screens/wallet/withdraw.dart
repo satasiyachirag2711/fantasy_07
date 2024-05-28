@@ -144,7 +144,8 @@ class _WithdrawScreenState extends State<WithdrawScreen> {
                           color: wallet.selectContainer.value == index ? const Color.fromARGB(255, 10, 37, 59) : Colors.white,
                           elevation: 4,
                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
-                          child: Center(
+                          child: Padding(
+                            padding: const EdgeInsets.all(10),
                             child: Text(
                               index == 0
                                   ? "\u{20B9}200"

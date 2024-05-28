@@ -1,9 +1,11 @@
+import 'package:fantasy_07/controller/wallet_controller.dart';
 import 'package:fantasy_07/firebase_options.dart';
 import 'package:fantasy_07/screens/splash_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+WalletController walletController = Get.put(WalletController());
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(

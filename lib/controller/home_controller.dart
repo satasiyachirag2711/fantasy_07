@@ -4,16 +4,39 @@ import 'package:get/get.dart';
 import '../services/api_services.dart';
 
 class HomeController extends GetxController {
+  final teamImage = RxString("");
   @override
   void onInit() {
     loadUpcoming();
+    loadLive();
+    loadComplete();
     super.onInit();
   }
 
   RxList<dynamic> upcomingMatch = <dynamic>[].obs;
+  RxList<dynamic> liveMatch = <dynamic>[].obs;
+  RxList<dynamic> completeMatch = <dynamic>[].obs;
   Future<void> loadUpcoming() async {
     try {
       await upComingMatchApi(upcomingMatch);
+    } catch (error) {
+      // Handle error if needed
+      debugPrint('Error fetching upcoming matches: $error');
+    }
+  }
+
+  Future<void> loadLive() async {
+    try {
+      await liveMatchApi(liveMatch);
+    } catch (error) {
+      // Handle error if needed
+      debugPrint('Error fetching upcoming matches: $error');
+    }
+  }
+
+  Future<void> loadComplete() async {
+    try {
+      await completeMatchApi(completeMatch);
     } catch (error) {
       // Handle error if needed
       debugPrint('Error fetching upcoming matches: $error');

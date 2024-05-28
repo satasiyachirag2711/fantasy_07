@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:share/share.dart';
 
 import '../../services/internet.dart';
 
@@ -24,6 +25,14 @@ class _ReferEarnScreenState extends State<ReferEarnScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+          actions: [
+            IconButton(
+                onPressed: () async {
+                  final box = context.findRenderObject() as RenderBox;
+                  await Share.share("${userDetails["userRefNo"]}", sharePositionOrigin: box.localToGlobal(Offset.zero) & box.size);
+                },
+                icon: Icon(Icons.share))
+          ],
           foregroundColor: Colors.white,
           backgroundColor: Colors.pinkAccent.shade400,
           title: Text(

@@ -10,24 +10,6 @@ class WalletController extends GetxController {
   TextEditingController addAmount = TextEditingController();
   TextEditingController withdrawAmount = TextEditingController();
   final selectContainer = RxInt(-1);
-  // Future<void> addAmounts() async {
-  //   try {
-  //     final res = await EasyUpiPaymentPlatform.instance.startPayment(
-  //       const EasyUpiPaymentModel(
-  //         payeeVpa: 'satasiya.chirag@paytm',
-  //         payeeName: 'Chirag Satasiya',
-  //         transactionId: "Dvffvv",
-  //         transactionRefId: "fvvf",
-  //         payeeMerchantCode: "dvd",
-  //         amount: 1,
-  //         description: 'Fantasy 07 payment',
-  //       ),
-  //     );
-  //     print(res!.responseCode);
-  //   } catch (e) {
-  //     print('Error during payment: $e');
-  //   }
-  // }
 
   Future<void> addPayment() async {
     DocumentReference userRef = FirebaseFirestore.instance.collection("userDetails").doc(FirebaseAuth.instance.currentUser!.uid);
